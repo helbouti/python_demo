@@ -11,7 +11,7 @@ Screen:
         elevation:10
     MDRaisedButton:
         text:"raised button"
-        pos_hint:{"center_x":.5,"center_y":.5}
+        pos_hint:{"center_x":.1,"center_y":.8}
         on_release:app.button_released()
 
 
