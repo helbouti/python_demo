@@ -26,10 +26,9 @@ class DemoApp(MDApp):
 
         #submit button
         self.submit=MDFlatButton(text="Submit")
-        #submit.pos=(500,500) use pos_hint instead
         self.submit.pos_hint={"center_x":.5,"center_y":.3}
 
-        #on click event
+        #on clicked event
         self.submit.on_release=lambda : self.clicked()
 
         #add to screen
