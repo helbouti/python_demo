@@ -6,6 +6,7 @@ from kivymd.uix.screen import MDScreen
 from kivymd.uix.button import MDFlatButton
 
 
+
 class DemoApp(MDApp):
     def build(self):
         screen = MDScreen()
@@ -20,6 +21,8 @@ class DemoApp(MDApp):
         self.password.pos_hint={"center_x":.5,"center_y":.4}
         self.password.hint_text="password"
         self.password.size_hint=(.5,.1)
+        self.password.password=True
+        
 
         #submit button
         self.submit=MDFlatButton(text="Submit")
