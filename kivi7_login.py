@@ -11,26 +11,34 @@ class DemoApp(MDApp):
         screen = MDScreen()
         
         #username
-        username=MDTextField()
-        username.pos_hint={"center_x":.5,"center_y":.5}
-        username.hint_text="user name"
-        username.size_hint=(.5,.1)
+        self.username=MDTextField()
+        self.username.pos_hint={"center_x":.5,"center_y":.5}
+        self.username.hint_text="user name"
+        self.username.size_hint=(.5,.1)
         #password
-        password=MDTextField()
-        password.pos_hint={"center_x":.5,"center_y":.4}
-        password.hint_text="password"
-        password.size_hint=(.5,.1)
+        self.password=MDTextField()
+        self.password.pos_hint={"center_x":.5,"center_y":.4}
+        self.password.hint_text="password"
+        self.password.size_hint=(.5,.1)
 
         #submit button
-        submit=MDFlatButton(text="Submit")
-        #submit.pos=(500,500) user pos_hint instead
-        submit.pos_hint={"center_x":.5,"center_y":.3}
+        self.submit=MDFlatButton(text="Submit")
+        #submit.pos=(500,500) use pos_hint instead
+        self.submit.pos_hint={"center_x":.5,"center_y":.3}
+
+        #on click event
+        self.submit.on_release=lambda : self.clicked()
 
         #add to screen
-        screen.add_widget(username)    
-        screen.add_widget(password)  
-        screen.add_widget(submit)  
+        screen.add_widget(self.username)    
+        screen.add_widget(self.password)  
+        screen.add_widget(self.submit)  
         return screen
+        
+    def clicked(self):
+        print(self.username.text)
+        print(self.password.text)
+
 
 
 DemoApp().run()
