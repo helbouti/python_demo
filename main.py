@@ -2,14 +2,15 @@ from random import Random
 from kivymd.app import MDApp
 from kivy.animation import Animation
 import random
-
+import logging
 
 class MainApp(MDApp):
-    pass
-
+    
         
     def dummy_function(self):
-        print(self.root.ids.password_field)
+        print(self.root.ids)
+        
+        
        
 
         
