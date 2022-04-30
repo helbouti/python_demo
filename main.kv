@@ -28,7 +28,7 @@ ScreenManager:
             hint_text:"USER NAME"
             pos_hint:{"center_x":0.5,"center_y":.60}
             size_hint: None, None
-            size:(200,44)
+            size:(400,44)
 
 
         #password field
@@ -38,13 +38,14 @@ ScreenManager:
             hint_text:"PASSWORD"
             pos_hint:{"center_x":0.5,"center_y":.47}
             size_hint: None, None
-            size:(200,44)
+            size:(400,44)
 
 
         #Submit button
         MDRaisedButton:
             text:"Submit"
             pos_hint:{"center_x":0.5,"center_y":.32}
+            size_hint:(.6,.08)
             on_release:
                 #app.root.current = "SecondScreen"
                 root.manager.current = 'SecondScreen'
@@ -72,6 +73,7 @@ ScreenManager:
         MDRaisedButton:
             text:"<<"
             pos_hint:{"center_x":0.5,"center_y":.32}
+            size_hint:(.6,.08)
             on_release:
                 root.manager.current = "FirstScreen"
                 root.manager.transition.direction = "right"
