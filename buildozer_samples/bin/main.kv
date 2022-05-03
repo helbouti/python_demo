@@ -1,0 +1,85 @@
+ScreenManager:
+    
+    FirstScreen:
+    SecondScreen:
+
+<FirstScreen@MDScreen>:
+    name:"FirstScreen"
+    MDFloatLayout :
+        id:root_layout
+        orientation: 'vertical'
+        #pos_hint:{"center_x":0,"center_y":0}
+        
+        
+        #spacing:10
+        #padding:[0,0,0,100]
+
+        MDToolbar:
+            elevation: 10
+            right_action_items:[["menu",lambda x:print(x)]]
+            title:"djanoub application 2022"
+            #pos:(0,root.height-self.height)
+            pos_hint:{"top":1}
+        
+
+        #user name field    
+        MDTextField:
+            id:user_name_field
+            hint_text:"USER NAME"
+            pos_hint:{"center_x":0.5,"center_y":.60}
+            size_hint: None, None
+            size:(400,44)
+
+
+        #password field
+        MDTextField:
+            id:password_field
+            password:True
+            hint_text:"PASSWORD"
+            pos_hint:{"center_x":0.5,"center_y":.47}
+            size_hint: None, None
+            size:(400,44)
+
+
+        #Submit button
+        MDRaisedButton:
+            text:"Submit"
+            pos_hint:{"center_x":0.5,"center_y":.32}
+            size_hint:(.6,.08)
+            on_release:
+                #app.root.current = "SecondScreen"
+                root.manager.current = 'SecondScreen'
+                root.manager.transition.direction = "left"
+                app.dummy_function()
+        
+
+
+<SecondScreen@MDScreen>:
+    name:"SecondScreen"
+    MDFloatLayout :
+        id:root_layout
+        orientation: 'vertical'
+
+        MDToolbar:
+            elevation: 10
+            right_action_items:[["menu",lambda x:print(x)]]
+            title:"djanoub application 2022"
+
+            pos_hint:{"top":1}
+        
+
+
+        #goback button
+        MDRaisedButton:
+            text:"<<"
+            pos_hint:{"center_x":0.5,"center_y":.32}
+            size_hint:(.6,.08)
+            on_release:
+                root.manager.current = "FirstScreen"
+                root.manager.transition.direction = "right"
+                app.dummy_function()
+        
+
+
+            
+
